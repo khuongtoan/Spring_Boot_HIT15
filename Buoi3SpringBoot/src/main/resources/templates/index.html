@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sinh viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: green;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: green;
+            color: white;
+        }
+        .button-group input {
+            margin: 3px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        form {
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px;
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Quản lý Sinh viên</h1>
+
+<!-- Form Thêm và Cập nhật Sinh viên -->
+<form th:action="@{/students/add}" method="post" th:object="${newStudent}">
+    <h3>Thêm / Cập nhật Sinh viên</h3>
+    <input type="hidden" th:field="*{id}" />
+    <input type="text" th:field="*{name}" placeholder="Nhập họ và tên" required />
+    <input type="email" th:field="*{email}" placeholder="Nhập email" required />
+    <input type="text" th:field="*{phone}" placeholder="Nhập số điện thoại" />
+    <input type="text" th:field="*{address}" placeholder="Nhập địa chỉ" />
+    <button type="submit">Lưu</button>
+</form>
+
+<!-- Bảng Danh Sách Sinh viên -->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Họ và Tên</th>
+        <th>Email</th>
+        <th>Số Điện Thoại</th>
+        <th>Địa Chỉ</th>
+        <th>Chức Năng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.phone}"></td>
+        <td th:text="${student.address}"></td>
+        <td class="button-group">
+            <!-- Nút Sửa -->
+            <a th:href="@{/students/edit/{id}(id=${student.id})}">
+                <button type="button">Sửa</button>
+            </a>
+            <!-- Nút Xóa -->
+            <a th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
+                <button type="button" style="background-color: red; color: white;">Xóa</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
