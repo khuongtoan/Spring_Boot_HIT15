@@ -1,18 +1,23 @@
 package com.btvnbuoi4.services;
 
-import com.btvnbuoi4.models.Student;
+import com.btvnbuoi4.domain.dtos.requests.CreateStudentRequest;
+import com.btvnbuoi4.domain.dtos.requests.UpdateStudentRequest;
+import com.btvnbuoi4.domain.dtos.responses.StudentResponse;
+import com.btvnbuoi4.domain.models.Student;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IStudentService {
-    public List<Student> getAll();
 
-    public Optional<Student> getById(Integer id);
+    List<StudentResponse> getAllStudents();
 
-    public Student create(Student student);
+    StudentResponse getStudentById(Integer id);
 
-    public Student update(Integer id, Student student);
+    StudentResponse createStudent(CreateStudentRequest request);
 
-    public void delete(Integer id);
+    StudentResponse updateStudent(Integer id, UpdateStudentRequest request);
+
+    StudentResponse deleteStudent(Integer id);
+
 }

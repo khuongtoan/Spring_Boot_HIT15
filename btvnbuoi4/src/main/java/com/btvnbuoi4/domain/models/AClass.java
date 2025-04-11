@@ -1,4 +1,4 @@
-package com.btvnbuoi4.models;
+package com.btvnbuoi4.domain.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
@@ -21,13 +21,13 @@ public class AClass {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String name;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String subject;
 
-    @OneToMany(mappedBy = "aclass" )
+    @OneToMany(mappedBy = "aclass")
     @JsonBackReference
     private List<Student> studentsList;
 }

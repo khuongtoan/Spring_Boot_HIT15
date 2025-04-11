@@ -1,5 +1,6 @@
-package com.btvnbuoi4.models;
+package com.btvnbuoi4.domain.models;
 
+import com.btvnbuoi4.domain.enums.Gender;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,19 +22,19 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(length = 100 )
+    @Column(length = 100, nullable = false )
     private String name;
 
-    @Column()
+    @Column(nullable = false)
     private LocalDate dob;
 
     @Enumerated(EnumType.STRING)
     private Gender gender ;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String email;
 
-    @Column(length = 15)
+    @Column(length = 15, nullable = false)
     private String phone;
 
     @ManyToOne
