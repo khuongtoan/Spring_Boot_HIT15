@@ -1,8 +1,7 @@
 package my_computer.week6_crud.domain.dto.response;
 
 import lombok.*;
-
-import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -12,9 +11,11 @@ import java.math.BigDecimal;
 public class EmployeeDTO {
     private Long id;
     private String fullName;
-    private String dateOfBirth;
-    private String hiredDate;
-    private BigDecimal salary;
+
+    private LocalDate dateOfBirth;
+    private LocalDate hiredDate;
+
+    private Double salary;
 
     private UserDTO user;
     private DepartmentDTO department;

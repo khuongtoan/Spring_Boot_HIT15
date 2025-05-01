@@ -27,11 +27,11 @@ public class Employee {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
     private Department department;
 
     @ManyToOne
-    @JoinColumn(name = "position_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(name = "position_id", referencedColumnName = "id")
     private Position position;
 
     @Column(nullable = false, length = 100)
