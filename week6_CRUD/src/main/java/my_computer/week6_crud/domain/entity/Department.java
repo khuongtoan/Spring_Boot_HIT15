@@ -1,11 +1,15 @@
 package my_computer.week6_crud.domain.entity;
 
-
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
 
 @Entity
-@Table(name = "Departments")
+@Table(name = "departments")
 @Getter
 @Setter
 @NoArgsConstructor
