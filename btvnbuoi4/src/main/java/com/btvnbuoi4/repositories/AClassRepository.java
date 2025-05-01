@@ -9,7 +9,7 @@ import java.util.Optional;
 @Repository
 public interface AClassRepository extends JpaRepository<AClass, Integer> {
 
-    Optional<AClass> findByName(String name);
-
-    boolean existsByName(String name);
+//    Optional<AClass> findByName(String name);
+//
+//    boolean existsByName(String name);
 }

@@ -44,7 +44,7 @@ public class StudentServiceImpl implements IStudentService {
     @Override
     public StudentResponse createStudent(CreateStudentRequest request) {
         AClass aClass = aClassRepository.findById(request.getClassId())
-                .orElseThrow(()->new RuntimeException("Not found student with id : " + request.getClassId()));
+                .orElseThrow(()->new RuntimeException("Not found class  with id : " + request.getClassId()));
         Student student = studentMapper.toEntity(request);
         student.setAclass(aClass);
 
@@ -76,6 +76,5 @@ public class StudentServiceImpl implements IStudentService {
         studentRepository.delete(student);
         return studentMapper.toResponse(student);
     }
-
-
+    
 }

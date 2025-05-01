@@ -1,9 +1,6 @@
 package com.btvnbuoi4.domain.dtos.requests;
 
 import com.btvnbuoi4.domain.enums.Gender;
-import com.btvnbuoi4.domain.models.AClass;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

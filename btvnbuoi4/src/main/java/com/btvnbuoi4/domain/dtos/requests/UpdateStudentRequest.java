@@ -31,4 +31,5 @@ public class UpdateStudentRequest {
     private String phone;
 
     private Integer classId;
+    
 }

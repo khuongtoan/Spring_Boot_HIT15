@@ -11,7 +11,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 @Entity
-@Table(name ="users")
+@Table(name ="students")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -36,10 +36,10 @@ public class Student {
 
     @Column(length = 15, nullable = false)
     private String phone;
-
+    
     @ManyToOne
     @JoinColumn(name = "class_id", referencedColumnName = "id")
-    @JsonBackReference
     private AClass aclass;
 
+    
 }

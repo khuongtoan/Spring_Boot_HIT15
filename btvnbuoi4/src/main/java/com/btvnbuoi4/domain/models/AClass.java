@@ -28,6 +28,5 @@ public class AClass {
     private String subject;
 
     @OneToMany(mappedBy = "aclass")
-    @JsonBackReference
     private List<Student> studentsList;
 }
