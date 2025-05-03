@@ -9,6 +9,7 @@ import my_computer.week6_crud.service.IUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,10 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<ApiResponse<UserDTO>> create(@RequestBody CreateUserRequestDTO request) {
-        return ResponseEntity.ok(new ApiResponse<>(200, "User created", userService.create(request)));
+        UserDTO createdUser = userService.create(request);
+        return ResponseEntity
+                .created(URI.create("/api/users/" + createdUser.getId()))
+                .body(new ApiResponse<>(201, "User created", createdUser));
     }
 
     @PutMapping("/{id}")
