@@ -8,6 +8,7 @@ public class Week6CrudApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(Week6CrudApplication.class, args);
+        System.out.println("This application is running with Spring Boot in port 8080");
     }
 
 }

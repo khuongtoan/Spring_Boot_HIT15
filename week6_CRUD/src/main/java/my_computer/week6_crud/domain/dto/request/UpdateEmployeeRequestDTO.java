@@ -1,12 +1,10 @@
 package my_computer.week6_crud.domain.dto.request;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
@@ -22,9 +20,8 @@ public class UpdateEmployeeRequestDTO {
     @NotNull(message = "Hired date is required")
     private LocalDate hiredDate;
 
-    @NotNull(message = "Salary is required")
-    @Positive(message = "Salary must be a positive value")
-    private Double salary;
+    @DecimalMin(value = "0.0", inclusive = false, message = "Salary must be positive")
+    private BigDecimal salary;
 
     @NotNull(message = "Department ID is required")
     private Long departmentId;

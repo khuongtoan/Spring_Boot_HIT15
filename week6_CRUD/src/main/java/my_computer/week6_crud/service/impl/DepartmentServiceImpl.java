@@ -21,27 +21,27 @@ public class DepartmentServiceImpl implements IDepartmentService {
     private final DepartmentMapper departmentMapper;
 
     @Override
-    public DepartmentDTO createDepartment(CreateDepartmentRequestDTO request) {
+    public DepartmentDTO create(CreateDepartmentRequestDTO request) {
         Department department = departmentMapper.toEntity(request);
         return departmentMapper.toDTO(departmentRepository.save(department));
     }
 
     @Override
-    public DepartmentDTO getDepartmentById(Long id) {
+    public DepartmentDTO getById(Long id) {
         Department department = departmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Department not found"));
         return departmentMapper.toDTO(department);
     }
 
     @Override
-    public List<DepartmentDTO> getAllDepartments() {
+    public List<DepartmentDTO> getAll() {
         return departmentRepository.findAll().stream()
                 .map(departmentMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public DepartmentDTO updateDepartment(Long id, UpdateDepartmentRequestDTO request) {
+    public DepartmentDTO update(Long id, UpdateDepartmentRequestDTO request) {
         Department department = departmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Department not found"));
         departmentMapper.updateEntity(request, department);
@@ -49,7 +49,7 @@ public class DepartmentServiceImpl implements IDepartmentService {
     }
 
     @Override
-    public void deleteDepartment(Long id) {
+    public void delete(Long id) {
         departmentRepository.deleteById(id);
     }
 }
