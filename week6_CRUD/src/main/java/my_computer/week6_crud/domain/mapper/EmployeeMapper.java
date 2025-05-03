@@ -1,31 +1,19 @@
 package my_computer.week6_crud.domain.mapper;
 
-
-import my_computer.week6_crud.domain.dto.response.DepartmentDTO;
+import my_computer.week6_crud.domain.dto.request.CreateEmployeeRequestDTO;
+import my_computer.week6_crud.domain.dto.request.UpdateEmployeeRequestDTO;
 import my_computer.week6_crud.domain.dto.response.EmployeeDTO;
-import my_computer.week6_crud.domain.dto.response.PositionDTO;
-import my_computer.week6_crud.domain.dto.response.UserDTO;
-import my_computer.week6_crud.domain.entity.Department;
 import my_computer.week6_crud.domain.entity.Employee;
-import my_computer.week6_crud.domain.entity.Position;
-import my_computer.week6_crud.domain.entity.User;
-import org.mapstruct.*;
-import org.mapstruct.factory.Mappers;
+import org.mapstruct.BeanMapping;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {UserMapper.class, DepartmentMapper.class, PositionMapper.class})
 public interface EmployeeMapper {
-
-    EmployeeMapper INSTANCE = Mappers.getMapper(EmployeeMapper.class);
-
-    // Entity -> DTO
     EmployeeDTO toDTO(Employee employee);
-    UserDTO toDTO(User user);
-    DepartmentDTO toDTO(Department department);
-    PositionDTO toDTO(Position position);
+    Employee toEntity(CreateEmployeeRequestDTO dto);
 
-    // DTO -> Entity
-    Employee toEntity(EmployeeDTO employeeDTO);
-    User toEntity(UserDTO userDTO);
-    Department toEntity(DepartmentDTO departmentDTO);
-    Position toEntity(PositionDTO positionDTO);
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    void updateEntity(UpdateEmployeeRequestDTO dto, @MappingTarget Employee employee);
 }
