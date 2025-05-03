@@ -23,17 +23,17 @@ public class EmployeeServiceImpl implements IEmployeeService {
     private final EmployeeMapper employeeMapper;
 
     @Override
-    public EmployeeDTO create(CreateEmployeeRequestDTO dto) {
-        User user = userRepository.findById(dto.getUserId())
+    public EmployeeDTO create(CreateEmployeeRequestDTO request) {
+        User user = userRepository.findById(request.getUserId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        Department department = departmentRepository.findById(dto.getDepartmentId()).orElse(null);
-        Position position = positionRepository.findById(dto.getPositionId()).orElse(null);
+        Department department = departmentRepository.findById(request.getDepartmentId()).orElseThrow(() -> new RuntimeException("Department not found"));
+        Position position = positionRepository.findById(request.getPositionId()).orElseThrow(() -> new RuntimeException("Position not found"));
 
         Employee employee = Employee.builder()
-                .fullName(dto.getFullName())
-                .dateOfBirth(dto.getDateOfBirth())
-                .hiredDate(dto.getHiredDate())
-                .salary(dto.getSalary())
+                .fullName(request.getFullName())
+                .dateOfBirth(request.getDateOfBirth())
+                .hiredDate(request.getHiredDate())
+                .salary(request.getSalary())
                 .user(user)
                 .department(department)
                 .position(position)
@@ -44,16 +44,21 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public EmployeeDTO update(Long id, UpdateEmployeeRequestDTO dto) {
+
+        if (dto.getHiredDate().isBefore(dto.getDateOfBirth())) {
+            throw new IllegalArgumentException("Hired date cannot be before date of birth");
+        }
+
         Employee employee = employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Employee not found"));
+                .orElseThrow(() -> new RuntimeException("Employee not found with id:"));
 
-        Department department = departmentRepository.findById(dto.getDepartmentId()).orElse(null);
-        Position position = positionRepository.findById(dto.getPositionId()).orElse(null);
+        Department department = departmentRepository.findById(dto.getDepartmentId())
+                .orElseThrow(() -> new RuntimeException("Department not found with id:"));
 
-        employee.setFullName(dto.getFullName());
-        employee.setDateOfBirth(dto.getDateOfBirth());
-        employee.setHiredDate(dto.getHiredDate());
-        employee.setSalary(dto.getSalary());
+        Position position = positionRepository.findById(dto.getPositionId())
+                .orElseThrow(() -> new RuntimeException("Position not found with id: "));
+
+        employeeMapper.updateEntity(dto, employee);
         employee.setDepartment(department);
         employee.setPosition(position);
 
