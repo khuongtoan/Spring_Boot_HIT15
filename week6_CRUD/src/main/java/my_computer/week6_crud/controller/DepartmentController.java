@@ -1,5 +1,6 @@
 package my_computer.week6_crud.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import my_computer.week6_crud.domain.dto.request.CreateDepartmentRequestDTO;
 import my_computer.week6_crud.domain.dto.request.UpdateDepartmentRequestDTO;
@@ -7,6 +8,7 @@ import my_computer.week6_crud.domain.dto.response.ApiResponse;
 import my_computer.week6_crud.domain.dto.response.DepartmentDTO;
 import my_computer.week6_crud.service.IDepartmentService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -15,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/departments")
 @RequiredArgsConstructor
+@Validated
 public class DepartmentController {
 
     private final IDepartmentService departmentService;

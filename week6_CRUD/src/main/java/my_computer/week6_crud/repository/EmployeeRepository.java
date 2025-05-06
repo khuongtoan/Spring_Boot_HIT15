@@ -11,15 +11,6 @@ import java.util.List;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
-    // Tìm kiếm nhân viên theo fullName (dùng từ khóa bất kỳ)
-    List<Employee> findByFullNameContainingIgnoreCase(String fullName);
-
-    // Tìm kiếm nhân viên theo departmentId
-    List<Employee> findByDepartmentId(Long departmentId);
-
-    // Tìm kiếm nhân viên theo positionId
-    List<Employee> findByPositionId(Long positionId);
-
     // Tìm kiếm nhân viên theo nhiều tiêu chí (fullName, departmentId, positionId)
     @Query("SELECT e FROM Employee e " +
             "WHERE (:fullName IS NULL OR LOWER(e.fullName) LIKE LOWER(CONCAT('%', :fullName, '%'))) " +

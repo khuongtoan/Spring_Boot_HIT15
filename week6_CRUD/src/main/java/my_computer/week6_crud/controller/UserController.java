@@ -7,6 +7,7 @@ import my_computer.week6_crud.domain.dto.response.ApiResponse;
 import my_computer.week6_crud.domain.dto.response.UserDTO;
 import my_computer.week6_crud.service.IUserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
+@Validated
 public class UserController {
 
     private final IUserService userService;
