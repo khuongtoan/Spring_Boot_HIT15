@@ -6,6 +6,7 @@ import my_computer.week6_crud.domain.dto.request.UpdateUserRequestDTO;
 import my_computer.week6_crud.domain.dto.response.UserDTO;
 import my_computer.week6_crud.domain.entity.User;
 import my_computer.week6_crud.domain.mapper.UserMapper;
+import my_computer.week6_crud.exception.NotFound;
 import my_computer.week6_crud.repository.UserRepository;
 import my_computer.week6_crud.service.IUserService;
 import org.springframework.stereotype.Service;
@@ -43,7 +44,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public UserDTO getById(Long id) {
         return userMapper.toDTO(userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found")));
+                .orElseThrow(() -> new NotFound("User not found")));
     }
 
     @Override

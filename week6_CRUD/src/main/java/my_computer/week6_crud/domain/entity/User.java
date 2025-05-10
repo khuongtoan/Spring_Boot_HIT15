@@ -2,6 +2,7 @@ package my_computer.week6_crud.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -27,14 +28,9 @@ public class User {
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", updatable = false)
+    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @PrePersist
-    public void onCreate() {
-        if (createdAt == null) {
-            createdAt = LocalDateTime.now();
-        }
-    }
 }
 
