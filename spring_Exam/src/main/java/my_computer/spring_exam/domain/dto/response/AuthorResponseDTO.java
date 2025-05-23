@@ -1,34 +1,27 @@
 package my_computer.spring_exam.domain.dto.response;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import my_computer.spring_exam.domain.entity.Book;
-
-import java.time.LocalDate;
-import java.util.List;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthorResponseDTO {
 
     @NotNull
-    private Integer id;
+    private Long id ;
 
     @NotNull
     private String name;
 
     @NotNull
-    private LocalDate dob;
+    private String dob;
 
     private String bio;
 
-    @NotNull
-    private Integer booksCount;
-
+    private Long bookCount;
 }

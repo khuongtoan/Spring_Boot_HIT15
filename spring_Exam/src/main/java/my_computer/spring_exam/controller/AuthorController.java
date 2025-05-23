@@ -1,15 +1,9 @@
 package my_computer.spring_exam.controller;
 
 import lombok.RequiredArgsConstructor;
-import my_computer.spring_exam.base.ApiResponse;
-import my_computer.spring_exam.base.RestApiV1;
-import my_computer.spring_exam.base.RestStatus;
-import my_computer.spring_exam.domain.dto.request.CreateAuthorRequestDTO;
-import my_computer.spring_exam.domain.dto.request.UpdateAuthorRequestDTO;
 import my_computer.spring_exam.domain.dto.response.AuthorResponseDTO;
-import my_computer.spring_exam.domain.entity.Author;
+import my_computer.spring_exam.domain.dto.resquest.AuthorRequestDTO;
 import my_computer.spring_exam.service.IAuthorService;
-import my_computer.spring_exam.service.impl.AuthorServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -17,41 +11,42 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Validated
-@RequestMapping("api/v1/author")
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
+@Validated
+@RequestMapping("/api/v1/author")
 public class AuthorController {
+    private final IAuthorService authorService;
 
-    private final IAuthorService service;
 
     @PostMapping()
-    public ResponseEntity<ApiResponse<AuthorResponseDTO>> create(@RequestBody CreateAuthorRequestDTO author) {
-        AuthorResponseDTO response = service.create(author);
-        return new ResponseEntity<>(new ApiResponse<>(RestStatus.SUCCESS,"Tạo tác giả thành công", response), HttpStatus.CREATED);
+    public ResponseEntity<AuthorResponseDTO> createAuthor(@RequestBody  AuthorRequestDTO dto) {
+        AuthorResponseDTO createdAuthor = authorService.createAuthor(dto);
+        return new ResponseEntity<>(createdAuthor, HttpStatus.CREATED);
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<ApiResponse<AuthorResponseDTO>> getById(@PathVariable Integer id) {
-        AuthorResponseDTO response = service.getById(id);
-        return new ResponseEntity<>(new ApiResponse<>(RestStatus.SUCCESS,"Lấy tác giả thành công", response), HttpStatus.OK);
+    @GetMapping("/{id}")
+    public ResponseEntity<AuthorResponseDTO> getAuthor(@PathVariable Long id) {
+        AuthorResponseDTO author = authorService.getAuthorById(id);
+        return new ResponseEntity<>(author, HttpStatus.OK);
     }
 
     @GetMapping()
-    public ResponseEntity<ApiResponse<List<ApiResponse>>> getAll() {
-        List<AuthorResponseDTO> response = service.getAll();
-        return new ResponseEntity<>( new ApiResponse<>(RestStatus.SUCCESS, "Lấy danh sách tác giả thành công"), HttpStatus.OK);
+    public ResponseEntity< List<AuthorResponseDTO>> getAuthors() {
+        List<AuthorResponseDTO> list = authorService.getAllAuthor();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @PutMapping()
-    public ResponseEntity<ApiResponse<AuthorResponseDTO>> update(@RequestBody UpdateAuthorRequestDTO authorRequestDTO, Integer id) {
-        AuthorResponseDTO response=  service.update(authorRequestDTO,id);
-        return new ResponseEntity<>( new ApiResponse<>(RestStatus.SUCCESS, "Cập nhật tác giả thành công"), HttpStatus.OK);
+    @PutMapping("/{id}")
+    public ResponseEntity< AuthorResponseDTO> updateAuthor(@RequestBody AuthorRequestDTO dto,@PathVariable Long id) {
+        AuthorResponseDTO author = authorService.updateAuthor(dto,id);
+        return new ResponseEntity<>(author, HttpStatus.OK);
     }
 
-    @DeleteMapping()
-    public ResponseEntity<ApiResponse<AuthorResponseDTO>> delete(Integer id) {
-        AuthorResponseDTO response = service.delete(id);
-        return new ResponseEntity<>( new ApiResponse<>(RestStatus.SUCCESS, "Xóa tác giả thành công"), HttpStatus.OK);
+    @DeleteMapping("/{id}")
+    public ResponseEntity< AuthorResponseDTO> deleteAuthor(@PathVariable Long id) {
+        AuthorResponseDTO author = authorService.deleteAuthor(id);
+        return new ResponseEntity<>( author, HttpStatus.OK);
     }
+
 }

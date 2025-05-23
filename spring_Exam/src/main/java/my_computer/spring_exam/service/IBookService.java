@@ -1,17 +1,17 @@
 package my_computer.spring_exam.service;
 
-import my_computer.spring_exam.domain.dto.request.CreateBookRequestDTO;
-import my_computer.spring_exam.domain.dto.request.UpdateBookRequestDTO;
 import my_computer.spring_exam.domain.dto.response.BookResponseDTO;
+import my_computer.spring_exam.domain.dto.resquest.BookRequestDTO;
+import my_computer.spring_exam.domain.entity.Book;
+
+import java.util.List;
 
 public interface IBookService {
 
-    BookResponseDTO create (CreateBookRequestDTO dto);
-
-    BookResponseDTO update (UpdateBookRequestDTO dto, Integer id);
-
-    BookResponseDTO GetById(Integer id);
-
-    BookResponseDTO delete(Integer id);
+    BookResponseDTO createBook(BookRequestDTO bookRequestDTO);
+    BookResponseDTO updateBook(BookRequestDTO bookRequestDTO, Long id);
+    BookResponseDTO deleteBook(Long id);
+    BookResponseDTO getBookById(Long id);
+    List<BookResponseDTO> filterBooks(String name, Double price, String authorName, String categoryName);
 
 }

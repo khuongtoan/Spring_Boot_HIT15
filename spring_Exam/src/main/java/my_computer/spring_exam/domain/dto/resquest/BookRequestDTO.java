@@ -1,5 +1,4 @@
-package my_computer.spring_exam.domain.dto.response;
-
+package my_computer.spring_exam.domain.dto.resquest;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
@@ -10,10 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class BookResponseDTO {
-
-    @NotNull
-    private Long id;
+public class BookRequestDTO {
 
     @NotNull
     private String name;
@@ -23,7 +19,9 @@ public class BookResponseDTO {
     @DecimalMin(value = "0.01")
     private Double price;
 
-    private String authorName;
+    @NotNull
+    private Long authorId;
 
-    private String categoryName;
+    @NotNull
+    private Long categoryId;
 }

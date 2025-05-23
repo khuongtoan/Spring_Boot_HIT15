@@ -1,6 +1,9 @@
 package my_computer.spring_exam.domain.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,11 +18,7 @@ import java.util.List;
 @Getter
 @Setter
 @SuperBuilder
-public class Author{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Author extends EntityBase {
 
     @Column(nullable = false)
     private String name;
@@ -29,7 +28,7 @@ public class Author{
 
     private String bio;
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books;
 
 }
