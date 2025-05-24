@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="fd92b127-722d-4aa1-9ab1-3ebfa6b68fc7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +28,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/SpringBoot",
+    "last_opened_file_path": "D:/SpringBoot/springSECURITY",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743699906951</updated>
-      <workItem from="1748022859931" duration="354000" />
+      <workItem from="1748022859931" duration="456000" />
     </task>
     <servers />
   </component>

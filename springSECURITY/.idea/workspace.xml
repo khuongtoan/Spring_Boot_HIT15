@@ -4,42 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd2c1bc8-126a-404b-bc6b-6cfb4834e100" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/base/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/base/RestApiV1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/base/RestStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/controller/AuthorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/request/CreateAuthorRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/request/CreateBookRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/request/CreateCategoryRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/request/UpdateAuthorRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/request/UpdateBookRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/request/UpdateCategoryRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/response/AuthorResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/response/BookResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/dto/response/CategoryResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/entity/Author.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/entity/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/entity/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/mapper/AuthorMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/mapper/BookMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/domain/mapper/CategoryMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/exception/NotFoundEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/repository/AuthorRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/repository/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/repository/CategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/service/IAuthorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/service/IBookService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/service/ICategoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/service/impl/AuthorServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/service/impl/BookServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_Exam/src/main/java/my_computer/spring_exam/service/impl/CategorySeviceImpl.java" beforeDir="false" />
+    <list default="true" id="4af5d64a-8f3e-478a-8b1c-815d0099baa9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -51,25 +32,46 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
-  <component name="ProjectId" id="2xDvx6N27TQjYRXPmJ3bHrMnI4i" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2xVVsreptyyrGXZqWIyEUxR4LpR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.SpringSecurityApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/work_JAVA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="SpringSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="springSECURITY" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="my_computer.springsecurity.SpringSecurityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,12 +83,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bd2c1bc8-126a-404b-bc6b-6cfb4834e100" name="Changes" comment="" />
-      <created>1747485704711</created>
+      <changelist id="4af5d64a-8f3e-478a-8b1c-815d0099baa9" name="Changes" comment="" />
+      <created>1748023439101</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1747485704711</updated>
-      <workItem from="1747485705907" duration="56000" />
+      <updated>1748023439101</updated>
+      <workItem from="1748023440172" duration="2957000" />
+      <workItem from="1748061215664" duration="4688000" />
     </task>
     <servers />
   </component>
